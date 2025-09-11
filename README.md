@@ -1,1 +1,1 @@
-# grule-mcp-server
+# mcp2grule
