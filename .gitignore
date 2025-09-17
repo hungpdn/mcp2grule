@@ -31,4 +31,5 @@ go.work.sum
 .env
 
 # Editor/IDE
-.vscode/
+# .vscode
+# .github

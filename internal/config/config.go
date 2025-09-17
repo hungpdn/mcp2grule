@@ -13,6 +13,16 @@ import (
 // App is the global application configuration variable
 var App Config
 
+// Config holds the application configuration
+// See .env.example for more documentation
+type Config struct {
+	MCPTransport  MCPTransport `env:"MCP_TRANSPORT" envDefault:"stdio"`
+	DatabaseType  DatabaseType `env:"DATABASE_TYPE" envDefault:"memory"`
+	HTTPTransport HTTPTransport
+	Pprof         Pprof
+	Grule         Grule
+}
+
 // init parses environment variables into the App config variable
 func init() {
 	err := env.Parse(&App)
@@ -41,16 +51,6 @@ const (
 	DatabaseTypeSQLite   DatabaseType = "sqlite"
 	DatabaseTypePostgres DatabaseType = "postgresql"
 )
-
-// Config holds the application configuration
-// See .env.example for more documentation
-type Config struct {
-	MCPTransport  MCPTransport `env:"MCP_TRANSPORT" envDefault:"stdio"`
-	DatabaseType  DatabaseType `env:"DATABASE_TYPE" envDefault:"memory"`
-	HTTPTransport HTTPTransport
-	Pprof         Pprof
-	Grule         Grule
-}
 
 type HTTPTransport struct {
 	Host      string `env:"HTTP_HOST" envDefault:"localhost"`

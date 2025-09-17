@@ -1,0 +1,44 @@
+# Git
+.gitignore
+.github
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Build artifacts
+bin/
+dist/
+build/
+
+# Go specific
+vendor/
+go.work
+
+# Testing
+*_test.go
+**/tests/
+coverage.out
+coverage.html
+
+# IDE and editor files
+.idea
+.vscode
+script
+
+# OS specific
+.DS_Store
+
+# Documentation
+docs/
+*.md
+LICENSE
+
+# Development tools
+**/*.yml
+**/*.yaml
+.golangci.yml
+.goreleaser.yml
+
+# Debug files
+__debug_bin*
